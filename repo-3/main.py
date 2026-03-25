@@ -1,4 +1,4 @@
-def funcion_cicd(request):
+def function_cicd(request):
 	request_json = request.get_json()
 	if request.args and 'message' in request.args:
 		return request.args.get('message')
