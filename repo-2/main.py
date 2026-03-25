@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-	return 'Welcome to Python Flask World V1.0 from CI/CD pipeline'
+	return 'Welcome to Python Flask World V2.0 from CI/CD pipeline'
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=8080)
