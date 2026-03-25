@@ -4,7 +4,7 @@ steps:
   - gcloud
   - functions
   - deploy
-  - funcion_cicd
+  - function_cicd
   - --region=us-central1
   - --source=.
   - --trigger-http
