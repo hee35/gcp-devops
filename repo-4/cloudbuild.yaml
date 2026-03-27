@@ -1,15 +1,15 @@
 steps:
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'us-central1-docker.pkg.dev/gcp-devops-456000/cicd-4', 'repo-4']
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/gcp-devops-456000/cicd-4/runimage', 'repo-4']
 # Push the container image to Artifact Registry 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us-central1-docker.pkg.dev/gcp-devops-456000/cicd-4']
+  args: ['push', 'us-central1-docker.pkg.dev/gcp-devops-456000/cicd-4/runimage']
 # Deploy container image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'runWithCicd', '--image', 'us-central1-docker.pkg.dev/gcp-devops-456000/cicd-4', '--region', 'us-central1', '--allow-unauthenticated']
+  args: ['run', 'deploy', 'runWithCicd', '--image', 'us-central1-docker.pkg.dev/gcp-devops-456000/cicd-4/runimage', '--region', 'us-central1', '--allow-unauthenticated']
 images:
-- us-central1-docker.pkg.dev/gcp-devops-456000/cicd-4
+- us-central1-docker.pkg.dev/gcp-devops-456000/cicd-4/runimage
 options:
   logging: CLOUD_LOGGING_ONLY
