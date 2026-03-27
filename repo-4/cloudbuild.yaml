@@ -11,3 +11,5 @@ steps:
   args: ['run', 'deploy', 'runWithCicd', '--image', 'us-central1-docker.pkg.dev/gcp-devops-456000/cicd-4', '--region', 'us-central1', '--allow-unauthenticated']
 images:
 - us-central1-docker.pkg.dev/gcp-devops-456000/cicd-4
+options:
+  logging: CLOUD_LOGGING_ONLY
