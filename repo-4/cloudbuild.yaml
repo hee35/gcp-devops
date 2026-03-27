@@ -8,7 +8,7 @@ steps:
 # Deploy container image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'runWithCicd', '--image', 'us-central1-docker.pkg.dev/gcp-devops-456000/cicd-4/runimage', '--region', 'us-central1', '--allow-unauthenticated']
+  args: ['run', 'deploy', 'runwithcicd', '--image', 'us-central1-docker.pkg.dev/gcp-devops-456000/cicd-4/runimage', '--region', 'us-central1', '--allow-unauthenticated']
 images:
 - us-central1-docker.pkg.dev/gcp-devops-456000/cicd-4/runimage
 options:
