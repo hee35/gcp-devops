@@ -11,10 +11,21 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push','us-central1-docker.pkg.dev/${_PROJECT_ID}/cicd-5/${_CINAME}:${_VERSION}']
 
+#kubectl set image deployment/cicd-app runimage-sha256-1=us-central1-docker.pkg.dev/${_PROJECT_ID}/cicd-5/${_CINAME}:${_VERSION}
+- name: 'gcr.io/cloud-builders/kubectl'
+  args:
+  - 'set'
+  - 'image'
+  - 'deployment/cicd-app'
+  - 'runimage-sha256-1=us-central1-docker.pkg.dev/${_PROJECT_ID}/cicd-5/${_CINAME}:${_VERSION}'
+  env:
+  - 'CLOUDSDK_CMPUTE_ZONE=us-central1-f'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=cicd-cluster'
+
 substitutions:
   _PROJECT_ID: gcp-devops-456000
   _CINAME: gke-image
-  _VERSION: v1.0
+  _VERSION: v2.0
 
 options:
   logging: CLOUD_LOGGING_ONLY
