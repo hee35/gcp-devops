@@ -9,7 +9,7 @@ steps:
 
 #docker push
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push','us-central1-docker.pkg.dev/${_PROJECT_ID}/${_CINAME}:${_VERSION}','repo-5']
+  args: ['push','us-central1-docker.pkg.dev/${_PROJECT_ID}/${_CINAME}:${_VERSION}']
 
 substitutions:
   _PROJECT_ID: gcp-deops-456000
