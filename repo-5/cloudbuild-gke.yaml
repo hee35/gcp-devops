@@ -5,11 +5,11 @@ steps:
 
 #docker build
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build','-t','us-central1-docker.pkg.dev/${_PROJECT_ID}/${_CINAME}:${_VERSION}','repo-5']
+  args: ['build','-t','us-central1-docker.pkg.dev/${_PROJECT_ID}/cicd-5/${_CINAME}:${_VERSION}','repo-5']
 
 #docker push
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push','us-central1-docker.pkg.dev/${_PROJECT_ID}/${_CINAME}:${_VERSION}']
+  args: ['push','us-central1-docker.pkg.dev/${_PROJECT_ID}/cicd-5/${_CINAME}:${_VERSION}']
 
 substitutions:
   _PROJECT_ID: gcp-deops-456000
