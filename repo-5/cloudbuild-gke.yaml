@@ -1,0 +1,17 @@
+#clone repo
+steps:
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'https://github.com/hee35/gcp-devops.git']
+
+#docker build
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build','-t','us-central1-docker.pkg.dev/${PROJECT_ID}/${CINAME}:${VERSION}','repo-5']
+
+#docker push
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push','us-central1-docker.pkg.dev/${PROJECT_ID}/${CINAME}:${VERSION}','repo-5']
+
+substitutions:
+  PROJECT_ID: gcp-deops-456000
+  CINAME: gke-image
+  VERSION: v1.0
