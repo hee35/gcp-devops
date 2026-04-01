@@ -5,13 +5,16 @@ steps:
 
 #docker build
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build','-t','us-central1-docker.pkg.dev/${PROJECT_ID}/${CINAME}:${VERSION}','repo-5']
+  args: ['build','-t','us-central1-docker.pkg.dev/${_PROJECT_ID}/${_CINAME}:${_VERSION}','repo-5']
 
 #docker push
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push','us-central1-docker.pkg.dev/${PROJECT_ID}/${CINAME}:${VERSION}','repo-5']
+  args: ['push','us-central1-docker.pkg.dev/${_PROJECT_ID}/${_CINAME}:${_VERSION}','repo-5']
 
 substitutions:
-  PROJECT_ID: gcp-deops-456000
-  CINAME: gke-image
-  VERSION: v1.0
+  _PROJECT_ID: gcp-deops-456000
+  _CINAME: gke-image
+  _VERSION: v1.0
+
+options:
+  logging: CLOUD_LOGGING_ONLY
