@@ -12,7 +12,7 @@ steps:
   args: ['push','us-central1-docker.pkg.dev/${_PROJECT_ID}/cicd-5/${_CINAME}:${_VERSION}']
 
 substitutions:
-  _PROJECT_ID: gcp-deops-456000
+  _PROJECT_ID: gcp-devops-456000
   _CINAME: gke-image
   _VERSION: v1.0
 
